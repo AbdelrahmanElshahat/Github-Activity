@@ -1,0 +1,47 @@
+version: '3.8'
+services:
+  backend:
+    build: .
+    container_name: ecommerce-backend
+    restart: always
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    depends_on:
+      - mongodb
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGODB_URI=mongodb://admin:password@mongodb:27017/amazona?authSource=admin
+      - PORT=5000
+      - NODE_ENV=development
+
+  frontend:
+    build: ./frontend
+    container_name: ecommerce-frontend
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    stdin_open: true
+    tty: true
+    environment:
+      - REACT_APP_API_URL=http://backend:5000
+
+  mongodb:
+    image: mongo:4.4
+    container_name: ecommerce-mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  mongodb_data:
+    driver: local
