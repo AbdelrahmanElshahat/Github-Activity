@@ -42,9 +42,7 @@ pipeline{
                 echo "========executing build backend image stage========"
                 script {
                     def version = getVersionFromPackageJson()
-                    dir('backend') {
-                        buildImage "elshahat20/my-app:iti-${version}"
-                    }
+                    buildImage "elshahat20/my-app:iti-${version}"
                 }
             }
         }
