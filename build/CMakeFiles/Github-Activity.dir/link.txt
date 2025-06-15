@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/Github-Activity.dir/link.d "CMakeFiles/Github-Activity.dir/src/main.cpp.o" "CMakeFiles/Github-Activity.dir/src/Github_activity.cpp.o" -o Github-Activity  /usr/lib/x86_64-linux-gnu/libcurl.so

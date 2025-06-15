@@ -1,0 +1,3 @@
+/home/elshahat/Documents/gitHubweb/Github-Activity/build/CMakeFiles/Github-Activity.dir
+/home/elshahat/Documents/gitHubweb/Github-Activity/build/CMakeFiles/edit_cache.dir
+/home/elshahat/Documents/gitHubweb/Github-Activity/build/CMakeFiles/rebuild_cache.dir
